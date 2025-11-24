@@ -10,6 +10,13 @@
 <body>
   <header class="site-header">
     <div class="topbar">
+      <a href="{{ url_for('index') }}" class="logo-link">
+        <img 
+            src="{{ url_for('static', filename='royal_rinse_logo.png') }}" 
+            alt="Royal Rinse Logo" 
+            class="site-logo"
+        >
+    </a>
       <div class="container header-inner">
         <div class="brand"><span class="title">Royal Rinse</span></div>
         <div class="menu-actions">
