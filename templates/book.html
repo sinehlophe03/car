@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>Book a Service</h2>
+<form method="post">
+  <label>Full name<input name="customer_name" required></label>
+  <label>Phone<input name="phone" required></label>
+  <label>Service
+    <select name="service">
+      <option value="basic">Basic Rinse</option>
+      <option value="deluxe">Deluxe Rinse</option>
+      <option value="royal">Royal Rinse</option>
+    </select>
+  </label>
+  <label>Date<input type="date" name="date" required></label>
+  <label>Time
+    <select name="time">
+      <option value="08:00">08:00</option>
+      <option value="09:00">09:00</option>
+      <option value="10:00">10:00</option>
+      <option value="11:00">11:00</option>
+      <option value="12:00">12:00</option>
+      <option value="13:00">13:00</option>
+      <option value="14:00">14:00</option>
+      <option value="15:00">15:00</option>
+      <option value="16:00">16:00</option>
+    </select>
+  </label>
+  <label>Address<textarea name="address" required></textarea></label>
+  <label>Notes<textarea name="notes"></textarea></label>
+  <button class="btn" type="submit">Submit</button>
+</form>
+{% if message %}
+  {% if message[0]=='accept' %}
+    <div class="notice accept">{{ message[1] }}</div>
+  {% elif message[0]=='reject' %}
+    <div class="notice reject">{{ message[1] }}</div>
+  {% elif message[0]=='error' %}
+    <div class="notice error">{{ message[1] }}</div>
+  {% endif %}
+{% endif %}
+{% endblock %}

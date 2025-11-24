@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Royal Rinse</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+  <script src="{{ url_for('static', filename='app.js') }}" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="topbar">
+      <div class="container header-inner">
+        <div class="brand"><span class="title">Royal Rinse</span></div>
+        <div class="menu-actions">
+          <div class="dropdown">
+            <button class="dropbtn">Menu ▾</button>
+            <div class="dropdown-content">
+              <a href="{{ url_for('index') }}">Home</a>
+              <a href="{{ url_for('book') }}">Book</a>
+              <a href="{{ url_for('schedule') }}">Schedule</a>
+              <a href="https://wa.me/76716978" target="_blank">WhatsApp Chat</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+  <main class="container">
+    {% with messages = get_flashed_messages(with_categories=true) %}
+      {% if messages %}
+        <div class="flashes">
+          {% for cat, msg in messages %}
+            <div class="flash {{cat}}">{{msg}}</div>
+          {% endfor %}
+        </div>
+      {% endif %}
+    {% endwith %}
+    {% block content %}{% endblock %}
+  </main>
+  <footer class="site-footer">
+    <div class="container">
+      <p>Contact: 76716978 · royalrinse07@gmail.com</p>
+      <p>Operating: Mbabane (Sidwashini)</p>
+      <div class="copy">© {{ current_year }} Royal Rinse</div>
+    </div>
+  </footer>
+</body>
+</html>

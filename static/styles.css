@@ -1,0 +1,18 @@
+:root{--gold:#d4af37;--muted:#bdb6a6;--bg:#0f0f10}
+body{font-family:Arial,Helvetica,sans-serif;background:linear-gradient(180deg,#070707,#0f0f10);color:var(--muted);margin:0}
+.container{max-width:1000px;margin:0 auto;padding:18px}
+.site-header{background:rgba(0,0,0,0.6);border-bottom:1px solid rgba(255,255,255,0.04);}
+.header-inner{display:flex;justify-content:space-between;align-items:center;padding:12px}
+.dropbtn{background:var(--gold);color:#000;padding:8px 14px;border:none;border-radius:6px;cursor:pointer}
+.dropdown{position:relative;display:inline-block}
+.dropdown-content{display:none;position:absolute;background:#111;min-width:160px;z-index:1;border-radius:6px;overflow:hidden;box-shadow:0 8px 24px rgba(0,0,0,0.6)}
+.dropdown:hover .dropdown-content{display:block}
+.dropdown-content a{color:var(--gold);padding:10px 14px;display:block;text-decoration:none}
+.hero{padding:40px;text-align:center;color:var(--gold)}
+.btn{background:var(--gold);color:#000;padding:10px 16px;border-radius:10px;text-decoration:none;display:inline-block;margin-top:10px}
+form label{display:block;margin:10px 0}
+input, select, textarea{width:100%;padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,0.05);background:#0b0b0b;color:var(--muted)}
+.notice.accept{background:rgba(0,100,0,0.15);padding:10px;border-radius:8px;margin-top:12px;color:#bfffbf}
+.notice.reject{background:rgba(100,0,0,0.12);padding:10px;border-radius:8px;margin-top:12px;color:#ffd2d2}
+.table{width:100%;border-collapse:collapse;margin-top:12px}
+.table th,.table td{padding:8px;border-bottom:1px solid rgba(255,255,255,0.03);text-align:left}
